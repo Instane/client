@@ -8,8 +8,8 @@ import axios from "axios";
 
 const Gameplay = () => {
 
-  const { topictype } = useGlobalContext();
-  const { data, loading, error } = useFetch(`http://192.168.1.4:8080/questions/getCategoryType?category=${topictype}`);
+  const { topictype, IPCONFIG } = useGlobalContext();
+  const { data, loading, error } = useFetch(`${IPCONFIG}/questions/getCategoryType?category=${topictype}`);
 
   const [question, setQuestion] = useState(1);
   const [givenQuestion, setGivenQuestion] = useState("");
@@ -99,7 +99,7 @@ const Gameplay = () => {
 
   const handleData = async () => {
     try {
-      await axios.post("http://192.168.1.4:8080/games/createGame", gameItems);
+      await axios.post(`${IPCONFIG}/games/createGame`, gameItems);
       navigate("/gameend");
     } catch (err) {
       alert("Something went wrong.");

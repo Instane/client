@@ -5,9 +5,11 @@ import Navbar from "../navbar/Navbar";
 import { AuthContext } from "../../context/authContext";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useGlobalContext } from "../../context/globalContext";
 
 const Profile = () => {
-
+  
+  const { IPCONFIG } = useGlobalContext();
   const [conpass, setConPass] = useState();
   const [edit, setEdit] = useState(true);
   const { loading, error, dispatch } = useContext(AuthContext);
@@ -37,7 +39,7 @@ const Profile = () => {
 
   const createQuestion = async () => {
     try {
-      const res = await axios.post("http://192.168.1.4:8080/questions", questions)
+      const res = await axios.post(`${IPCONFIG}/questions`, questions)
       alert("Question has been created!")
     } catch (err) {
       alert(err)
@@ -58,7 +60,7 @@ const Profile = () => {
         const token = Cookies.get("access_token");
           try {
           const res = await axios.put(
-          `http://192.168.1.4:8080/users/${user._id}`,
+          `${IPCONFIG}/users/${user._id}`,
           credentials,
           {
             headers: {

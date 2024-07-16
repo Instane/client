@@ -7,11 +7,12 @@ export const useGlobalContext = () => {
 };
 
 export const GlobalProvider = ({ children }) => {
-  const [currentpage, setCurrentPage] = useState(1);
+  const [currentpage, setCurrentPage] = useState();
   const [gametype, setGameType] = useState("");
   const [selectcategory, setSelectCategory] = useState("");
   const [topictype, setTopicType] = useState("");
   const [gamescore, setGameScore] = useState(Number);
+  const [IPCONFIG, setIPCONFIG] = useState("http://10.243.243.219:8080");
 
   return (
     <GlobalContext.Provider
@@ -26,6 +27,8 @@ export const GlobalProvider = ({ children }) => {
         setTopicType,
         gamescore, 
         setGameScore,
+        IPCONFIG, 
+        setIPCONFIG
       }}
     >
       {children}

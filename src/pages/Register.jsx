@@ -2,9 +2,11 @@ import "../App.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios"
+import { useGlobalContext } from "../context/globalContext";
 
 const Register = () => {
   const [conpass, setConPass] = useState();
+  const { IPCONFIG } = useGlobalContext();
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
@@ -34,7 +36,7 @@ const Register = () => {
       alert("You have entered two different password.")
     } else {
       try {
-        const res = await axios.post("http://192.168.1.4:8080/auth/register", credentials);
+        const res = await axios.post(`${IPCONFIG}/auth/register`, credentials);
         alert("You are now registered.")
         navigate("/")
     } catch (err) {

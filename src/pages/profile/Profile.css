@@ -94,7 +94,7 @@
 .view.w {
   margin-left: 7.3em;
   width: 9em;
-  position: absolute;
+  position: static;
 }
 
 .forad {

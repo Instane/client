@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import Navbar from "../navbar/Navbar";
 import axios from "axios";
 import { AuthContext } from "../../context/authContext";
+import { useGlobalContext } from "../../context/globalContext";
 
 const Matches = ({ category, gametype, score, createdAt }) => {
   return (
@@ -22,11 +23,12 @@ const Matches = ({ category, gametype, score, createdAt }) => {
 const History = () => {
   const [matches, setMatches] = useState([]);
   const { user } = useContext(AuthContext);
+  const { IPCONFIG } = useGlobalContext();
 
   useEffect(() => {
     const fetchGameByPlayer = async (username) => {
       try {
-        const res = await axios.get(`http://192.168.1.4:8080/games/getByPlayer/${username}`);
+        const res = await axios.get(`${IPCONFIG}/games/getByPlayer/${username}`);
         setMatches(res.data);
       } catch (err) {
         console.error('Error fetching game data:', err);

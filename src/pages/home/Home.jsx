@@ -4,13 +4,15 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/authContext.jsx";
 import useFetch from "../../hooks/useFetch.jsx";
 import axios from "axios";
+import { useGlobalContext } from "../../context/globalContext.jsx";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
+  const { IPCONFIG } = useGlobalContext();
   
-  const { data: gamesData } = useFetch(`http://192.168.1.4:8080/games/getAmount/${user.username}`);
-  const { data: highestScoreData } = useFetch(`http://192.168.1.4:8080/games/getHighestScore/${user.username}`);
-  const { data: mostPlayedData } = useFetch(`http://192.168.1.4:8080/games/getMostPlayed/${user.username}`);
+  const { data: gamesData } = useFetch(`${IPCONFIG}/games/getAmount/${user.username}`);
+  const { data: highestScoreData } = useFetch(`${IPCONFIG}/games/getHighestScore/${user.username}`);
+  const { data: mostPlayedData } = useFetch(`${IPCONFIG}/games/getMostPlayed/${user.username}`);
 
   const [updateRank, setUpdateRank] = useState();
   const [totalGames, setTotalGames] = useState();
@@ -45,7 +47,7 @@ const Home = () => {
     }
   const updatedRank = async (username, rank) => {
     try {
-      const res = await axios.put(`http://192.168.1.4:8080/users/updaterank/${username}`, { rank });
+      const res = await axios.put(`${IPCONFIG}/users/updaterank/${username}`, { rank });
       console.log(res.data);
     } catch (err) {
       alert(err.message);

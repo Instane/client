@@ -1,6 +1,7 @@
 import "./Leaderboard.css";
 import Navbar from "../navbar/Navbar";
 import { useEffect, useState } from "react";
+import { useGlobalContext } from "../../context/globalContext";
 
 const categories = ["English", "Maths", "Geography", "Science", "History"];
 
@@ -8,6 +9,7 @@ const Leaderboard = () => {
   const [results, setResults] = useState({});
   const [loading, setLoading] = useState({});
   const [error, setError] = useState({});
+  const { IPCONFIG } = useGlobalContext();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +22,7 @@ const Leaderboard = () => {
       try {
         const fetchedResults = await Promise.all(
           categories.map(async (category) => {
-            const response = await fetch(`http://192.168.1.4:8080/games/highestscorecategory/${category}`);
+            const response = await fetch(`${IPCONFIG}/games/highestscorecategory/${category}`);
             if (!response.ok) {
               throw new Error(`Failed to fetch data for ${category}`);
             }
