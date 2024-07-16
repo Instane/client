@@ -26,7 +26,7 @@ const History = () => {
   useEffect(() => {
     const fetchGameByPlayer = async (username) => {
       try {
-        const res = await axios.get(`http://localhost:8800/games/getByPlayer/${username}`);
+        const res = await axios.get(`http://192.168.1.4:8080/games/getByPlayer/${username}`);
         setMatches(res.data);
       } catch (err) {
         console.error('Error fetching game data:', err);

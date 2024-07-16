@@ -34,7 +34,7 @@ const Register = () => {
       alert("You have entered two different password.")
     } else {
       try {
-        const res = await axios.post("http://localhost:8800/auth/register", credentials);
+        const res = await axios.post("http://192.168.1.4:8080/auth/register", credentials);
         alert("You are now registered.")
         navigate("/")
     } catch (err) {

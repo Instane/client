@@ -20,7 +20,7 @@ const Leaderboard = () => {
       try {
         const fetchedResults = await Promise.all(
           categories.map(async (category) => {
-            const response = await fetch(`http://localhost:8800/games/highestscorecategory/${category}`);
+            const response = await fetch(`http://192.168.1.4:8080/games/highestscorecategory/${category}`);
             if (!response.ok) {
               throw new Error(`Failed to fetch data for ${category}`);
             }

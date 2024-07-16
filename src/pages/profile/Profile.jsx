@@ -37,7 +37,7 @@ const Profile = () => {
 
   const createQuestion = async () => {
     try {
-      const res = await axios.post("http://localhost:8800/questions", questions)
+      const res = await axios.post("http://192.168.1.4:8080/questions", questions)
       alert("Question has been created!")
     } catch (err) {
       alert(err)
@@ -58,7 +58,7 @@ const Profile = () => {
         const token = Cookies.get("access_token");
           try {
           const res = await axios.put(
-          `http://localhost:8800/users/${user._id}`,
+          `http://192.168.1.4:8080/users/${user._id}`,
           credentials,
           {
             headers: {
@@ -221,6 +221,10 @@ const Profile = () => {
           </div>
         </div>
       )}
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       <br />

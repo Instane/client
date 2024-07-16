@@ -8,9 +8,9 @@ import axios from "axios";
 const Home = () => {
   const { user } = useContext(AuthContext);
   
-  const { data: gamesData } = useFetch(`http://localhost:8800/games/getAmount/${user.username}`);
-  const { data: highestScoreData } = useFetch(`http://localhost:8800/games/getHighestScore/${user.username}`);
-  const { data: mostPlayedData } = useFetch(`http://localhost:8800/games/getMostPlayed/${user.username}`);
+  const { data: gamesData } = useFetch(`http://192.168.1.4:8080/games/getAmount/${user.username}`);
+  const { data: highestScoreData } = useFetch(`http://192.168.1.4:8080/games/getHighestScore/${user.username}`);
+  const { data: mostPlayedData } = useFetch(`http://192.168.1.4:8080/games/getMostPlayed/${user.username}`);
 
   const [updateRank, setUpdateRank] = useState();
   const [totalGames, setTotalGames] = useState();
@@ -45,7 +45,7 @@ const Home = () => {
     }
   const updatedRank = async (username, rank) => {
     try {
-      const res = await axios.put(`http://localhost:8800/users/updaterank/${username}`, { rank });
+      const res = await axios.put(`http://192.168.1.4:8080/users/updaterank/${username}`, { rank });
       console.log(res.data);
     } catch (err) {
       alert(err.message);
