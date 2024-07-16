@@ -1,0 +1,38 @@
+.logo {
+    width:auto;
+    height:auto;
+}
+
+.inline {
+    display:inline-flex;
+    margin: auto;
+}
+
+.header {
+  margin-top: 2em;
+  font-size: 25px;
+}
+
+.bigwrapper {
+  padding-top: 0.01em;
+    width: 200px;
+    text-align: left;
+    display:block;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+.bigdatablocks.w {
+  height:200px;
+  width:200px;
+  display:block;
+}
+
+.hintext {
+  text-align: center;
+}
+
+.intext {
+  margin:auto;
+  display:contents;
+}

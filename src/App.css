@@ -1,0 +1,88 @@
+#root {
+  max-width: 1980px;
+  margin: auto;
+  padding: 5%;
+  vertical-align:middle;  
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 9rem;
+}
+
+input {
+  display:block;
+  background-color: white;
+  border-style:solid;
+  color:black;
+  border-radius:10px;
+  width: 18rem;
+  height: 2rem;
+  padding-left:1rem;
+  padding-right:1rem;
+  font-size:1.2em;
+  margin: 2px auto;
+  box-shadow: 3px 5px 5px 0px  rgb(211, 211, 211);
+  outline: none;
+}
+
+input:hover {
+  background-color:rgb(238, 238, 238);
+}
+
+input:focus {
+  outline:none;
+}
+
+button {
+  background-color: #EBD071;
+  border: none;
+  color:black;
+  font-style: italic;
+  font-weight: bold;
+  border-radius:10px;
+  width: 6rem;
+  height: 2.2rem;
+  margin: 15% 35% 10%;
+  font-size: 15px;
+  box-shadow: 3px 5px 5px 0px  rgb(211, 211, 211);
+}
+
+button:hover {
+  background-color:#ddc46b;
+  cursor:pointer;
+}
+
+.register {
+  width:8rem;
+  margin: 15% 30% 10%;
+}
+
+.signuptext {
+  margin: auto;
+  text-align: center;
+}
+
+.vic {
+  color: rgb(3, 199, 3);
+  text-align: center;
+}
+
+.urscore {
+  text-align: center;
+  font-weight: bold;
+}
+
+.draw {
+  color: grey;
+}
+
+.head1 {
+  font-size: 40px;
+}
+
+::-ms-reveal {
+  filter: invert(100%);
+}

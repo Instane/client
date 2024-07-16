@@ -1,0 +1,45 @@
+.datablocks2 {
+    background-color:#EBD071;
+    border-radius: 10px;
+    width: 8em;
+    height: 8em;
+    padding: 0% 2% 0% 2%;
+    margin: 4% auto;
+    box-shadow: 3px 5px 5px 0px  rgb(211, 211, 211);
+  }
+
+.inline1 {
+    display: inline-flex;
+    width: 100%;
+    margin: 0px;
+}
+
+.inline2 {
+display: inline-flex;
+}
+
+.logo2 {
+width: auto;
+height: auto;
+}
+
+.topiclogo {
+width: 50%;
+margin-top: 1.5em;
+}
+
+.topiclogo2 {
+width: 40%;
+margin-top: 1.5em;
+}
+
+.underlogo {
+font-weight: bold;
+text-align: center;
+}
+
+.underlogo2 {
+font-weight: bold;
+text-align: center;
+margin-top: 45px;
+}

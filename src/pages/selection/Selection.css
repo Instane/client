@@ -1,0 +1,55 @@
+.logo1 {
+    width: 1.5em;
+    left: 0;
+    position: absolute;
+    padding: 10px 10px 10px 10px;
+    margin: auto 10%;
+  }
+
+.logo3 {
+    width: 3em;
+    height: 2.5em;
+    left: 0;
+    margin: auto 10%;
+}
+
+.logo1:hover {
+  background-color: rgb(238, 238, 238);
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
+}
+
+.header1 {
+  width: auto;
+  height: auto;
+  padding-bottom: 5%;
+}
+
+.datablocks1 {
+  background-color:#EBD071;
+  resize: auto;
+  border-radius: 10px;
+  width: 20em;
+  height: 6em;
+  padding: 0% 2% 0% 2%;
+  margin: 20% auto;
+  box-shadow: 3px 5px 5px 0px  rgb(211, 211, 211);
+}
+
+.datablock-wrapper {
+  display: inline-flex;
+  margin: 30px 15px;
+}
+
+.datablock-wrapper2 {
+  display: inline-flex;
+  margin: 12px 10px 0px 15px;
+}
+
+.blockheader1 {
+  font-weight: bold;
+  width: 9em;
+  margin: auto;
+  font-size: 1.5em;
+  text-align: left;
+}
